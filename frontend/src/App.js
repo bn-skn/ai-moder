@@ -332,7 +332,7 @@ const Stats = () => {
 };
 
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = React.useState(0);
+  const [openIndex, setOpenIndex] = React.useState(null);
   
   const faqItems = [
     {
