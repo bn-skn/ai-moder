@@ -313,9 +313,10 @@ const Stats = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="glass-card p-8">
             <img 
-              src="https://images.unsplash.com/photo-1717501217835-821cc3aefbc3" 
+              src="https://images.unsplash.com/photo-1717501217835-821cc3aefbc3?auto=format&fit=crop&w=800&q=80" 
               alt="Статистика эффективности AI-модератора" 
               className="w-full h-auto rounded-xl"
+              loading="lazy"
             />
           </div>
           
