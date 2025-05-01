@@ -141,9 +141,10 @@ const Hero = () => {
               <div className="absolute -inset-0.5 bg-gradient-primary rounded-3xl blur-lg opacity-30"></div>
               <div className="glass-card overflow-hidden p-3 relative z-10">
                 <img 
-                  src="https://images.unsplash.com/photo-1590494165264-1ebe3602eb80" 
+                  src="https://images.unsplash.com/photo-1590494165264-1ebe3602eb80?auto=format&fit=crop&w=800&q=80" 
                   alt="AI защита для Telegram чатов" 
                   className="w-full h-auto rounded-2xl"
+                  loading="eager"
                 />
               </div>
             </div>
