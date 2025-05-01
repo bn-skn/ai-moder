@@ -185,19 +185,19 @@ const Features = () => {
       icon: <FiMessageSquare className="text-4xl text-primary-500" />,
       title: "Анализ контента",
       description: "Интеллектуальный анализ всех сообщений в реальном времени для выявления спама и нежелательного контента.",
-      image: "https://images.unsplash.com/photo-1585698204432-aee3d8d68911"
+      image: "https://images.unsplash.com/photo-1585698204432-aee3d8d68911?auto=format&fit=crop&w=600&q=80"
     },
     {
       icon: <FiZap className="text-4xl text-secondary-500" />,
       title: "Удаление спама",
       description: "Автоматическое удаление спам-сообщений и блокировка нарушителей без вашего участия.",
-      image: "https://images.unsplash.com/photo-1555529902-5261145633bf"
+      image: "https://images.unsplash.com/photo-1555529902-5261145633bf?auto=format&fit=crop&w=600&q=80"
     },
     {
       icon: <FiLock className="text-4xl text-accent-500" />,
       title: "Защита чата",
       description: "Круглосуточная защита от попыток взлома, флуда и массовых атак на ваше сообщество.",
-      image: "https://images.unsplash.com/photo-1593407089396-93f0c7a575f0"
+      image: "https://images.unsplash.com/photo-1593407089396-93f0c7a575f0?auto=format&fit=crop&w=600&q=80"
     }
   ];
 
