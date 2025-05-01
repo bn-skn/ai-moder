@@ -6,24 +6,70 @@ import { FaTelegramPlane } from "react-icons/fa";
 
 // Components
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = React.useState(false);
+  
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+  
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+  
   return (
-    <nav className="fixed w-full z-50 bg-white/80 backdrop-blur-xl border-b border-primary-100">
+    <nav className="fixed w-full z-50 bg-white/90 backdrop-blur-xl border-b border-primary-100">
       <div className="container-custom py-4 flex justify-between items-center">
-        <a href="#" className="flex items-center gap-2">
+        <a href="#" className="flex items-center gap-2 z-20">
           <FiShield className="text-primary-500 text-3xl" />
           <span className="text-2xl font-bold text-primary-500">AI-Модератор</span>
         </a>
+        
+        {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
           <a href="#features" className="text-dark/80 hover:text-primary-500 transition-colors">Функции</a>
           <a href="#benefits" className="text-dark/80 hover:text-primary-500 transition-colors">Преимущества</a>
           <a href="#stats" className="text-dark/80 hover:text-primary-500 transition-colors">Статистика</a>
           <a href="#faq" className="text-dark/80 hover:text-primary-500 transition-colors">FAQ</a>
         </div>
+        
+        {/* Mobile Menu Button */}
+        <button 
+          className="md:hidden flex flex-col justify-center items-center gap-1.5 z-20" 
+          onClick={toggleMenu}
+          aria-label="Открыть меню"
+        >
+          <span className={`block w-6 h-0.5 bg-primary-500 transition-all duration-300 ${menuOpen ? 'transform rotate-45 translate-y-2' : ''}`}></span>
+          <span className={`block w-6 h-0.5 bg-primary-500 transition-all duration-300 ${menuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+          <span className={`block w-6 h-0.5 bg-primary-500 transition-all duration-300 ${menuOpen ? 'transform -rotate-45 -translate-y-2' : ''}`}></span>
+        </button>
+        
+        {/* CTA Button */}
         <a 
           href="https://t.me/articortex"
           target="_blank"
           rel="noopener noreferrer" 
-          className="btn btn-primary"
+          className="hidden md:flex btn btn-primary"
+        >
+          <FaTelegramPlane className="mr-2 text-xl" />
+          Подключить
+        </a>
+      </div>
+      
+      {/* Mobile Menu Overlay */}
+      <div 
+        className={`fixed inset-0 bg-dark/80 backdrop-blur-xl z-10 transition-all duration-300 flex flex-col justify-center items-center gap-8 ${menuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+      >
+        <a href="#features" onClick={closeMenu} className="text-white text-xl hover:text-primary-300 transition-colors">Функции</a>
+        <a href="#benefits" onClick={closeMenu} className="text-white text-xl hover:text-primary-300 transition-colors">Преимущества</a>
+        <a href="#stats" onClick={closeMenu} className="text-white text-xl hover:text-primary-300 transition-colors">Статистика</a>
+        <a href="#faq" onClick={closeMenu} className="text-white text-xl hover:text-primary-300 transition-colors">FAQ</a>
+        
+        <a 
+          href="https://t.me/articortex"
+          target="_blank"
+          rel="noopener noreferrer" 
+          onClick={closeMenu}
+          className="btn btn-primary mt-4"
         >
           <FaTelegramPlane className="mr-2 text-xl" />
           Подключить
